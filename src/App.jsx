@@ -8,6 +8,7 @@ import IssueList from './components/view/IssueList';
 import Search from './components/view/IssueSearch';
 import News from './components/view/News';
 import IssueCreate from './components/view/IssueCreate'
+import IssueUpdate from './components/view/IssueUpdate'
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/issuelist" component={IssueList} />
           <Route path="/search" component={Search} />
           <Route path="/issuecreate" component={IssueCreate} />
+          <Route path="/issueupdate" component={IssueUpdate} />
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
         </div>

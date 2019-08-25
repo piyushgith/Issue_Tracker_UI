@@ -6,7 +6,7 @@ class IssueCreate extends Component {
       super();
       this.state = {
         issue: [],
-        //id: 0,
+        id: "",
         category: "",
         description: "",
         status: "",
@@ -55,16 +55,18 @@ class IssueCreate extends Component {
         priority: e.state.priority
       };
       //console.log(issue);
-      alert("issue.status" + issue.status);
+      //alert("issue.status" + issue.status);
       axios
         .post("http://localhost:9999/saveIssue", issue)
         .then(response => response.data)
         .then(data => {
           this.setState({ issue: data });
           console.log(this.state.issue);
+          alert("Issue has been create with ID: " + this.data.issue.id) ;
         });
+       
     }
-    componentDidUpdate() {}
+    //componentDidUpdate() {}
   
     render() {
       return (
