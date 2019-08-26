@@ -41,10 +41,10 @@ class TableRow extends Component {
         <td>{this.props.obj.priority}</td>
         <td>{this.props.obj.status}</td>
         <td>
-        <Button bsStyle="primary" value={this.props.obj.id} onClick={this.closeOnSelect}> Close Defects</Button>
+        <Link className="btn btn-primary" to={'/issueupdate/' + this.props.obj.id}>Update Defect</Link>
         </td>
         <td>
-        <Link className="btn btn-primary" to={'/issueupdate/' + this.props.obj.id}>Update Defect</Link>
+        <Button bsStyle="primary" value={this.props.obj.id} onClick={this.closeOnSelect}> Close Defects</Button>
         </td>
       </tr>
     );
