@@ -18,13 +18,11 @@ class IssueCreate extends Component {
     }
     handleSelectChange(e) {
       if (e.target.name === "priority") {
-        //alert(e.target.value);
         this.setState({
           priority: e.target.value
         });
       }
       if (e.target.name === "status") {
-        //alert(e.target.value);
         this.setState({
           status: e.target.value
         });
@@ -55,8 +53,7 @@ class IssueCreate extends Component {
         status: e.state.status,
         priority: e.state.priority
       };
-      //console.log(issue);
-      //alert("issue.status" + issue.status);
+
       axios
         .post("http://localhost:9999/saveIssue", issue)
         .then(response => response.data)
