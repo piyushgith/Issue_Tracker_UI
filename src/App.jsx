@@ -20,7 +20,7 @@ class App extends Component {
           <Route path="/issuelist" component={IssueList} />
           <Route path="/search" component={Search} />
           <Route path="/issuecreate" component={IssueCreate} />
-          <Route path="/issueupdate" component={IssueUpdate} />
+          <Route path="/issueupdate/:id" component={IssueUpdate} />
           <Route path="/about" component={About} />
           <Route path="/news" component={News} />
         </div>

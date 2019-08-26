@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import axios from "axios";
 
 class TableRow extends Component {
@@ -24,6 +25,7 @@ class TableRow extends Component {
       .then(response => response.data)
       .then(data => {
         this.setState({ issue: data });
+        this.props.getList();
         alert("Issue has been closed with ID: " + this.props.obj.id) ;
         console.log("Issue has been closed with ID: " + this.props.obj.id) ;
       });
@@ -40,6 +42,9 @@ class TableRow extends Component {
         <td>{this.props.obj.status}</td>
         <td>
         <Button bsStyle="primary" value={this.props.obj.id} onClick={this.closeOnSelect}> Close Defects</Button>
+        </td>
+        <td>
+        <Link className="btn btn-primary" to={'/issueupdate/' + this.props.obj.id}>Update Defect</Link>
         </td>
       </tr>
     );

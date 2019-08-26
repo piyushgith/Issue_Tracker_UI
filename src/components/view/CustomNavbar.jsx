@@ -30,7 +30,7 @@ export default class CustomNavbar extends Component {
             <NavItem eventKey={4} componentClass={Link} href="/about" to="/about">
               About
             </NavItem>
-             <NavItem eventKey={5} componentClass={Link} href="/issueupdate" to="/issueupdate">
+             <NavItem eventKey={5} componentClass={Link} href="/issueupdate/1" to="/issueupdate/1">
              Issue Update
             </NavItem> 
           </Nav>

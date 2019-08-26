@@ -19,7 +19,7 @@ export default class IssueUpdate extends Component {
   
     componentDidMount() {
       axios
-        .get("http://localhost:9999/getIssue/1")
+        .get("http://localhost:9999/getIssue/" + this.props.match.params.id)
         .then(response => response.data)
         .then(data => {
           this.setState({ issue: data });
@@ -59,8 +59,8 @@ export default class IssueUpdate extends Component {
   
             <div>
                 <label style={{fontWeight: "bold",alignContent:"space-between"}} >Priority:  </label>
-                <select style={{width:"35%",alignSelf:"right"}} name="priority"id="priority" vlaue={this.state.issue.priority} onChange={this.handleSelectChange}>
-                    <option value="">Please Select</option>
+                <select style={{width:"35%",alignSelf:"right"}} name="priority"id="priority" value={this.state.issue.priority} onChange={this.handleSelectChange}>
+                    <option value="">Please Select {this.state.issue.priority}</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -69,7 +69,7 @@ export default class IssueUpdate extends Component {
             </div>
   
             <br></br>
-            <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Create Defect</button>
+            <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Update Defect</button>
           </form>
         </React.Fragment>
       );

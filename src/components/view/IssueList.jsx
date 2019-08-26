@@ -11,6 +11,10 @@ class IssueList extends Component {
   };
 
   componentDidMount() {
+    this.getList()  
+  }
+
+  getList() {
     const url = `${API_URL}/getIssues`;
     axios
       .get(url)
@@ -22,8 +26,8 @@ class IssueList extends Component {
   }
 
   tabRow() {
-    return this.state.issue.map(function(object, i) {
-      return <TableRow obj={object} key={i} />;
+    return this.state.issue.map((object, i) => {
+      return <TableRow obj={object} key={i} getList={this.getList.bind(this)} />;
     });
   }
 
@@ -37,7 +41,7 @@ class IssueList extends Component {
         <br />
         <table
           style={{ width: "100%" }}
-          className="table table-bordered table-hover"
+          className="table table-bordered table-hover table-striped"
         >
           <thead className="thead-light">
             <tr className="table-primary">
@@ -47,6 +51,7 @@ class IssueList extends Component {
               <th>Priority</th>
               <th>Status</th>
               <th>Change Status</th>
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>{this.tabRow()}</tbody>

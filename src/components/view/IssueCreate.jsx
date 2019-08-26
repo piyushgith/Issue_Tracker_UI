@@ -44,6 +44,7 @@ class IssueCreate extends Component {
     }
   
     handleSubmit(e) {
+      e.preventDefault();
       this.insertNewIssue(this);
     }
   
@@ -61,8 +62,9 @@ class IssueCreate extends Component {
         .then(response => response.data)
         .then(data => {
           this.setState({ issue: data });
-          console.log(this.state.issue);
-          alert("Issue has been create with ID: " + this.data.issue.id) ;
+          console.log(this.state.issue, data);
+          this.props.history.push('/issuelist')
+          //alert("Issue has been create with ID: " + data.issue.id) ;
         });
        
     }
